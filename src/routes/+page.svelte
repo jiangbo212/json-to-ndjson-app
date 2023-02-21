@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import init, { copy_text } from '../../json-to-ndjson-rust/pkg/json_to_ndjson_rust.js';
+
 
 	/**
 	 * @type {HTMLTextAreaElement}
@@ -11,16 +13,18 @@
 	let rightTextarea;
 
 	function copyToLeft() {
-		rightTextarea.value = leftTextarea.value;
+		rightTextarea.value = copy_text(leftTextarea.value);
 	}
 
 	function copyToRight() {
-		leftTextarea.value = rightTextarea.value;
+		leftTextarea.value = copy_text(rightTextarea.value);
 	}
 
 	onMount(() => {
 		leftTextarea.focus();
+		init();
 	});
+
 </script>
 
 <div class="fixed top-0 left-0 w-full bg-gray-200 z-50">
