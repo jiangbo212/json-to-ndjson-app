@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import init, { copy_text } from '../../.pkg/json_to_ndjson_rust.js';
+	import init, { json_to_ndjson, ndjson_to_json } from '../../.pkg/json_to_ndjson_rust.js';
 
 
 	/**
@@ -13,11 +13,11 @@
 	let rightTextarea;
 
 	function copyToLeft() {
-		rightTextarea.value = copy_text(leftTextarea.value);
+		rightTextarea.value = json_to_ndjson(leftTextarea.value);
 	}
 
 	function copyToRight() {
-		leftTextarea.value = copy_text(rightTextarea.value);
+		leftTextarea.value = ndjson_to_json(rightTextarea.value);
 	}
 
 	onMount(() => {
