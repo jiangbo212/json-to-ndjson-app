@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import init, { copy_text } from '../../json-to-ndjson-rust/pkg/json_to_ndjson_rust.js';
+	import init, { copy_text } from '../../.pkg/json_to_ndjson_rust.js';
 
 
 	/**

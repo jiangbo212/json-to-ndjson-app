@@ -6,6 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"wasm": "cd json-to-ndjson-rust/ && wasm-pack build --target web --out-dir ../.pkg --release && cd ..",
 		"publish": "CLOUDFLARE_ACCOUNT_ID=65ff632eb75c920735533d121c2ad6a7 npx wrangler pages publish .svelte-kit/cloudflare",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
